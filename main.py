@@ -53,6 +53,6 @@ if __name__ == "__main__":
         for x in tasks: # 循环遍历并绘画
             if getBoardColor(x[0], x[1]) != dict_t[x[2]]:
                 t = getToken()
-                threading.Thread(target=paint,args=(x[0], x[1], x[2], t, refer),daemon=true).start()
+                threading.Thread(target=paint,args=(x[0], x[1], x[2], t, refer),daemon=True).start()
                 token_time[t] = time.time()
                 time.sleep(0.3)
