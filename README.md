@@ -5,7 +5,7 @@
 ## 准备
 
 - GIMP
-- Python3 (需安装requests库)
+- Python3 (需安装requests和pillow库)
 
 ## 使用方法
 
