@@ -16,7 +16,7 @@ server = 'https://www.luogu.com.cn/paintboard'
 boardaddr = server + '/board'
 paintaddr = server + '/paint'
 refer = 'https://www.luogu.com.cn/paintboard'
-cd = 30
+cd = 31
 
 # 获取坐标(x,y)上的颜色
 def getBoardColor(x, y):
