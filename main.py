@@ -29,6 +29,7 @@ def paint(x, y, color, token, refer):
     data = {'x': x, 'y': y, 'color': color}
     head = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36','Referer': refer,'content-type':'application/x-www-form-urlencoded'}
     print(requests.post(paintaddr + "?token=" + token, data=data, headers=head).text,x,y,token)
+    
 
 # 更新绘板颜色数据
 def boardUpdate():
@@ -51,7 +52,7 @@ if __name__ == "__main__":
     upd.start()
     while True:
         for x in tasks: # 循环遍历并绘画
-            if getBoardColor(x[0], x[1]) != dict_t[x[2]]:
+            if getBoardColor(x[0], x[1]) != str(dict_t[x[2]]):
                 t = getToken()
                 threading.Thread(target=paint,args=(x[0], x[1], x[2], t, refer),daemon=True).start()
                 token_time[t] = time.time()
