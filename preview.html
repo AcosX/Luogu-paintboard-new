@@ -42,11 +42,11 @@
 		function createPicture()
 		{
 			d=document.getElementById("qaq");
-			d.innerHTML="<canvas id=\"drawing\" width=800 height=400></canvas>";
+			d.innerHTML="<canvas id=\"drawing\" width=999 height=599></canvas>";
 			var drawing=document.getElementById("drawing"); 
 			var context=drawing.getContext("2d");
-			var a=context.createImageData(800,400);
-			for (i=0;i<800*400;++i)
+			var a=context.createImageData(999,599);
+			for (i=0;i<999*599;++i)
 			{
 				col=2;
 				a.data[i*4]=c[col][0];
@@ -59,10 +59,10 @@
 				x=board[i][0];
 				y=board[i][1];
 				col=board[i][2];
-				a.data[(y*800+x)*4]=c[col][0];
-				a.data[(y*800+x)*4+1]=c[col][1];
-				a.data[(y*800+x)*4+2]=c[col][2];
-				a.data[(y*800+x)*4+3]=255;
+				a.data[(y*999+x)*4]=c[col][0];
+				a.data[(y*999+x)*4+1]=c[col][1];
+				a.data[(y*999+x)*4+2]=c[col][2];
+				a.data[(y*999+x)*4+3]=255;
 			}
 			context.putImageData(a, 0, 0);
 		}
