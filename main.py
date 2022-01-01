@@ -43,6 +43,7 @@ def boardUpdate():
 def getToken():
     while True:
         for k, v in token_time.items():
+            time.sleep(0.1)
             if time.time() - v > cd:
                 return k
 
