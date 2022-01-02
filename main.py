@@ -52,9 +52,12 @@ if __name__ == "__main__":
     upd = threading.Thread(target=boardUpdate()) # 创建并开启子线程用于实时更新绘板数据
     upd.start()
     while True:
+        boardUpdate()
         for x in tasks: # 循环遍历并绘画
-            if getBoardColor(x[0], x[1]) != str(dict_t[x[2]]):
+            if getBoardColor(x[0], x[1]) != str(dict_t[x[2]]): #必须是dict_t[x[2]]
                 t = getToken()
                 threading.Thread(target=paint,args=(x[0], x[1], x[2], t, refer),daemon=True).start()
                 token_time[t] = time.time()
-                time.sleep(0.3)
+                time.sleep(0.2)
+        boardUpdate()
+        time.sleep(1)
