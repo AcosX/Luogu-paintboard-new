@@ -6,7 +6,14 @@ DataPath = "board.json"
 Data2Path = "board2.json"
 
 if len(sys.argv) < 4:
-    print("ImageToData.py <ImagePath> <LeftTopX> <LeftTopY>")
+    if len(sys.argv) == 2:
+        if sys.argv[2] == 'clean':
+            with open(DataPath, 'w') as f:
+                f.write('[]')
+    else:
+        print("Usage:")
+        print("ImageToData.py <ImagePath> <LeftTopX> <LeftTopY>")
+        print("ImageToData.py clean")
     quit()
 
 try:
